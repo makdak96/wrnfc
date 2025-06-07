@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War is not for Children – Help Gaza's Kids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Языковой переключатель */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .language-btn:hover, .language-btn.active {
+            background: #0A2463;
+            color: white;
+        }
+        
+        /* Шапка */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgfund/vm5hb6z32b97hofncw1sdaj7i9ovf278.jpg') no-repeat center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #E05A2C;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #0A2463;
+        }
+        
+        .btn-secondary:hover {
+            background: #081b42;
+        }
+        
+        /* Основной контент */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #0A2463;
+        }
+        
+        .mission {
+            background: white;
+        }
+        
+        .mission p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+        
+        /* Блок с донатами */
+        .donation-type {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .donation-type-btn {
+            padding: 15px 30px;
+            border: 2px solid #0A2463;
+            border-radius: 5px;
+            background: white;
+            color: #0A2463;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .donation-type-btn.active {
+            background: #0A2463;
+            color: white;
+        }
+        
+        .donation-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .donation-option {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .donation-option:hover {
+            transform: translateY(-10px);
+        }
+        
+        .donation-option.selected {
+            border: 2px solid #FF6B35;
+            background: #FFF5F2;
+        }
+        
+        .donation-option h3 {
+            color: #0A2463;
+            margin-bottom: 10px;
+        }
+        
+        .custom-amount {
+            margin-top: 20px;
+        }
+        
+        .custom-amount input {
+            padding: 10px;
+            width: 150px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        /* Блок прозрачности */
+        .transparency {
+            background: #f0f4f8;
+        }
+        
+        /* Галерея */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Футер */
+        footer {
+            background: #0A2463;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .social-icons {
+            margin: 20px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .donation-type {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donation-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .donation-option {
+                width: 80%;
+            }
+            
+            .gallery img {
+                width: 100%;
+            }
+        }
+        
+        /* Арабская версия */
+        [lang="ar"] {
+            direction: rtl;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        [lang="ar"] .container {
+            text-align: right;
+        }
+        
+        [lang="ar"] .mission p, 
+        [lang="ar"] .custom-amount p {
+            text-align: right;
+        }
+        
+        [lang="ar"] ul {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Языковой переключатель -->
+    <div class="language-switcher">
+        <button class="language-btn active" data-lang="en">EN</button>
+        <button class="language-btn" data-lang="es">ES</button>
+        <button class="language-btn" data-lang="ar">العربية</button>
+    </div>
+    
+    <!-- Шапка -->
+    <section class="hero">
+        <div class="hero-content" data-i18n="hero">
+            <h1 data-i18n="title">War is not for Children</h1>
+            <p data-i18n="subtitle">Help Us Save Lives in Gaza – Every Donation Matters</p>
+            <a href="#donate" class="btn" data-i18n="donateBtn">Donate Now</a>
+        </div>
+    </section>
+    
+    <!-- Миссия -->
+    <section class="section mission">
+        <div class="container">
+            <h2 data-i18n="missionTitle">Emergency Aid for Children in Gaza</h2>
+            <p data-i18n="missionText1">Thousands of children in Gaza are facing unimaginable hardship — without clean water, food, or medical care.</p>
+            <p data-i18n="missionText2">Your donation provides:</p>
+            <ul style="list-style: none; margin: 20px 0;">
+                <li data-i18n="benefit1">✔ Emergency food and clean water</li>
+                <li data-i18n="benefit2">✔ Medical supplies and trauma support</li>
+                <li data-i18n="benefit3">✔ Shelter and hygiene kits</li>
+            </ul>
+            <p><strong data-i18n="missionText3">Every dollar saves lives.</strong></p>
+            
+            <!-- Галерея -->
+            <div class="gallery">
+                <img src="imgfund\image1170x530cropped(2).jpg" alt="Children in UNRWA school (Gaza)" data-i18n-alt="galleryAlt1">
+                <img src="imgfund\image1170x530cropped.jpg" alt="Children in Gaza receiving aid" data-i18n-alt="galleryAlt2">
+                <img src="imgfund\image1170x530cropped(1).jpg" alt="Medical aid distribution" data-i18n-alt="galleryAlt3">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Донации -->
+    <section class="section" id="donate">
+        <div class="container">
+            <h2 data-i18n="donateTitle">Choose Your Impact</h2>
+            
+            <!-- Выбор типа доната -->
+            <div class="donation-type">
+                <button class="donation-type-btn active" id="one-time-btn" data-i18n="oneTime">One-Time Donation</button>
+                <button class="donation-type-btn" id="monthly-btn" data-i18n="monthly">Monthly Donation</button>
+            </div>
+            
+            <!-- Варианты сумм -->
+            <div class="donation-options">
+                <div class="donation-option" data-amount="10">
+                    <h3>$10</h3>
+                    <p data-i18n="option1">Clean water for 1 child</p>
+                </div>
+                <div class="donation-option" data-amount="25">
+                    <h3>$25</h3>
+                    <p data-i18n="option2">Food package for a family</p>
+                </div>
+                <div class="donation-option" data-amount="50">
+                    <h3>$50</h3>
+                    <p data-i18n="option3">Medical supplies</p>
+                </div>
+                <div class="donation-option" data-amount="100">
+                    <h3>$100</h3>
+                    <p data-i18n="option4">Shelter and hygiene</p>
+                </div>
+                <div class="donation-option" data-amount="500">
+                    <h3>$500</h3>
+                    <p data-i18n="option5">Save multiple lives</p>
+                </div>
+            </div>
+            
+            <!-- Кастомная сумма -->
+            <div class="custom-amount">
+                <p data-i18n="customAmount">Or enter custom amount (USD):</p>
+                <input type="number" id="custom-amount-input" min="1" value="25">
+            </div>
+            
+            <!-- PayPal кнопка -->
+            <div style="margin: 40px 0;">
+                <form action="https://www.paypal.com/donate" method="post" target="_blank" id="paypal-form">
+                    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="item_name" value="Donation to War is not for Children">
+                    <input type="hidden" name="amount" id="paypal-amount" value="25">
+                    <input type="hidden" name="cmd" id="paypal-cmd" value="_donations">
+                    <input type="hidden" name="t3" id="paypal-t3" value="">
+                    <input type="hidden" name="p3" id="paypal-p3" value="1">
+                    <input type="hidden" name="src" id="paypal-src" value="0">
+                    <button type="submit" class="btn" style="font-size: 1.2rem; padding: 15px 40px;" data-i18n="paypalBtn">Donate via PayPal</button>
+                </form>
+                <p style="margin-top: 10px; font-size: 0.9rem;" data-i18n="secureText">Secure payment processed by PayPal</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Прозрачность -->
+    <section class="section transparency">
+        <div class="container">
+            <h2 data-i18n="transparencyTitle">We Guarantee Transparency</h2>
+            <p data-i18n="transparencyText">100% of your donation goes to vetted organizations in Gaza. We'll share regular reports on how funds are used.</p>
+            <img src="imgfund\arbatmedia-ad00206bcff1c42ba5896ffcd89dee54-800x448.jpg" alt="UNRWA volunteers" data-i18n-alt="transparencyAlt" style="width: 100%; max-width: 800px; border-radius: 8px; margin-top: 20px;">
+        </div>
+    </section>
+    
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <h3 data-i18n="footerTitle">War is not for Children</h3>
+            <p data-i18n="footerText">Children in Gaza need you now. Donate, share, or pray — every action counts.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; <span data-i18n="year">2024</span> War is not for Children. <span data-i18n="rights">All rights reserved.</span></p>
+        </div>
+    </footer>
+    
+    <!-- Иконки Font Awesome (для соцсетей) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Скрипт для работы с донатами -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Элементы
+            const oneTimeBtn = document.getElementById('one-time-btn');
+            const monthlyBtn = document.getElementById('monthly-btn');
+            const donationOptions = document.querySelectorAll('.donation-option');
+            const customAmountInput = document.getElementById('custom-amount-input');
+            const paypalForm = document.getElementById('paypal-form');
+            const paypalAmount = document.getElementById('paypal-amount');
+            const paypalCmd = document.getElementById('paypal-cmd');
+            const paypalT3 = document.getElementById('paypal-t3');
+            const paypalP3 = document.getElementById('paypal-p3');
+            const paypalSrc = document.getElementById('paypal-src');
+            
+            let selectedAmount = 25;
+            let isMonthly = false;
+            
+            // Выбор типа доната
+            oneTimeBtn.addEventListener('click', function() {
+                oneTimeBtn.classList.add('active');
+                monthlyBtn.classList.remove('active');
+                isMonthly = false;
+                updatePaypalForm();
+            });
+            
+            monthlyBtn.addEventListener('click', function() {
+                monthlyBtn.classList.add('active');
+                oneTimeBtn.classList.remove('active');
+                isMonthly = true;
+                updatePaypalForm();
+            });
+            
+            // Выбор суммы
+            donationOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    donationOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedAmount = this.getAttribute('data-amount');
+                    paypalAmount.value = selectedAmount;
+                    customAmountInput.value = selectedAmount;
+                });
+            });
+            
+            // Кастомная сумма
+            customAmountInput.addEventListener('input', function() {
+                selectedAmount = this.value;
+                paypalAmount.value = selectedAmount;
+                
+                // Снимаем выделение с фиксированных сумм
+                donationOptions.forEach(opt => opt.classList.remove('selected'));
+            });
+            
+            // Обновление формы PayPal
+            function updatePaypalForm() {
+                if (isMonthly) {
+                    paypalCmd.value = "_xclick-subscriptions";
+                    paypalT3.value = "M";
+                    paypalP3.value = "1";
+                    paypalSrc.value = "1";
+                } else {
+                    paypalCmd.value = "_donations";
+                    paypalT3.value = "";
+                    paypalP3.value = "1";
+                    paypalSrc.value = "0";
+                }
+            }
+            
+            // Выбираем первую сумму по умолчанию
+            donationOptions[1].click();
+            
+            // Мультиязычная поддержка
+            const translations = {
+                "en": {
+                    "title": "War is not for Children",
+                    "subtitle": "Help Us Save Lives in Gaza – Every Donation Matters",
+                    "donateBtn": "Donate Now",
+                    "missionTitle": "Emergency Aid for Children in Gaza",
+                    "missionText1": "Thousands of children in Gaza are facing unimaginable hardship — without clean water, food, or medical care.",
+                    "missionText2": "Your donation provides:",
+                    "benefit1": "✔ Emergency food and clean water",
+                    "benefit2": "✔ Medical supplies and trauma support",
+                    "benefit3": "✔ Shelter and hygiene kits",
+                    "missionText3": "Every dollar saves lives.",
+                    "galleryAlt1": "Children in UNRWA school (Gaza)",
+                    "galleryAlt2": "Children in Gaza receiving aid",
+                    "galleryAlt3": "Medical aid distribution",
+                    "donateTitle": "Choose Your Impact",
+                    "oneTime": "One-Time Donation",
+                    "monthly": "Monthly Donation",
+                    "option1": "Clean water for 1 child",
+                    "option2": "Food package for a family",
+                    "option3": "Medical supplies",
+                    "option4": "Shelter and hygiene",
+                    "option5": "Save multiple lives",
+                    "customAmount": "Or enter custom amount (USD):",
+                    "paypalBtn": "Donate via PayPal",
+                    "secureText": "Secure payment processed by PayPal",
+                    "transparencyTitle": "We Guarantee Transparency",
+                    "transparencyText": "100% of your donation goes to vetted organizations in Gaza. We'll share regular reports on how funds are used.",
+                    "transparencyAlt": "UNRWA volunteers",
+                    "footerTitle": "War is not for Children",
+                    "footerText": "Children in Gaza need you now. Donate, share, or pray — every action counts.",
+                    "year": "2024",
+                    "rights": "All rights reserved."
+                },
+                "es": {
+                    "title": "La guerra no es para niños",
+                    "subtitle": "Ayúdanos a salvar vidas en Gaza – Cada donación cuenta",
+                    "donateBtn": "Donar ahora",
+                    "missionTitle": "Ayuda de emergencia para niños en Gaza",
+                    "missionText1": "Miles de niños en Gaza enfrentan dificultades inimaginables: sin agua limpia, comida ni atención médica.",
+                    "missionText2": "Tu donación proporciona:",
+                    "benefit1": "✔ Alimentos de emergencia y agua limpia",
+                    "benefit2": "✔ Suministros médicos y apoyo psicológico",
+                    "benefit3": "✔ Refugio y kits de higiene",
+                    "missionText3": "Cada dólar salva vidas.",
+                    "galleryAlt1": "Niños en escuela de UNRWA (Gaza)",
+                    "galleryAlt2": "Niños en Gaza recibiendo ayuda",
+                    "galleryAlt3": "Distribución de ayuda médica",
+                    "donateTitle": "Elige tu impacto",
+                    "oneTime": "Donación única",
+                    "monthly": "Donación mensual",
+                    "option1": "Agua limpia para 1 niño",
+                    "option2": "Paquete de comida para una familia",
+                    "option3": "Suministros médicos",
+                    "option4": "Refugio e higiene",
+                    "option5": "Salvar múltiples vidas",
+                    "customAmount": "O ingresa una cantidad personalizada (USD):",
+                    "paypalBtn": "Donar con PayPal",
+                    "secureText": "Pago seguro procesado por PayPal",
+                    "transparencyTitle": "Garantizamos transparencia",
+                    "transparencyText": "El 100% de tu donación va a organizaciones verificadas en Gaza. Compartiremos informes regulares sobre el uso de los fondos.",
+                    "transparencyAlt": "Voluntarios de UNRWA",
+                    "footerTitle": "La guerra no es para niños",
+                    "footerText": "Los niños de Gaza te necesitan ahora. Dona, comparte o reza — cada acción cuenta.",
+                    "year": "2024",
+                    "rights": "Todos los derechos reservados."
+                },
+                "ar": {
+                    "title": "الحرب ليست للأطفال",
+                    "subtitle": "ساعدنا في إنقاذ الأرواح في غزة - كل تبرع مهم",
+                    "donateBtn": "تبرع الآن",
+                    "missionTitle": "مساعدة طارئة لأطفال غزة",
+                    "missionText1": "الآلاف من الأطفال في غزة يواجهون ظروفًا صعبة لا يمكن تصورها — بدون مياه نظيفة أو طعام أو رعاية طبية.",
+                    "missionText2": "تبرعك يوفر:",
+                    "benefit1": "✔ الغذاء الطارئ والمياه النظيفة",
+                    "benefit2": "✔ المستلزمات الطبية والدعم النفسي",
+                    "benefit3": "✔ المأوى ومستلزمات النظافة",
+                    "missionText3": "كل دولار ينقذ حياة.",
+                    "galleryAlt1": "أطفال في مدرسة الأونروا (غزة)",
+                    "galleryAlt2": "أطفال في غزة يتلقون المساعدة",
+                    "galleryAlt3": "توزيع المساعدات الطبية",
+                    "donateTitle": "اختر تأثيرك",
+                    "oneTime": "تبرع لمرة واحدة",
+                    "monthly": "تبرع شهري",
+                    "option1": "مياه نظيفة لطفل واحد",
+                    "option2": "حصة غذاء لعائلة",
+                    "option3": "مستلزمات طبية",
+                    "option4": "مأوى ونظافة",
+                    "option5": "إنقاذ حيوات متعددة",
+                    "customAmount": "أو أدخل مبلغًا مخصصًا (دولار):",
+                    "paypalBtn": "تبرع عبر PayPal",
+                    "secureText": "دفع آمن عبر PayPal",
+                    "transparencyTitle": "نضمن الشفافية",
+                    "transparencyText": "100% من تبرعك يذهب إلى منظمات موثوقة في غزة. سنشارك تقارير منتظمة عن كيفية استخدام الأموال.",
+                    "transparencyAlt": "متطوعو الأونروا",
+                    "footerTitle": "الحرب ليست للأطفال",
+                    "footerText": "أطفال غزة يحتاجونك الآن. تبرع، شارك، أو صلّ — كل فعل مهم.",
+                    "year": "2024",
+                    "rights": "جميع الحقوق محفوظة."
+                }
+            };
+            
+            // Переключатель языков
+            const langButtons = document.querySelectorAll('.language-btn');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    // Меняем язык документа
+                    const lang = this.getAttribute('data-lang');
+                    document.documentElement.lang = lang;
+                    
+                    // Применяем перевод
+                    applyTranslation(lang);
+                });
+            });
+            
+            // Функция применения перевода
+            function applyTranslation(lang) {
+                const elements = document.querySelectorAll('[data-i18n], [data-i18n-alt]');
+                
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-i18n') || element.getAttribute('data-i18n-alt');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.getAttribute('data-i18n-alt')) {
+                            element.alt = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                });
+            }
+            
+            // Инициализация английского языка по умолчанию
+            applyTranslation('en');
+        });
+    </script>
+</body>
+</html>
